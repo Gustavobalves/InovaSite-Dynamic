@@ -1,0 +1,8 @@
+{
+  "name": "InovaSite Dynamic",
+  "description": "Build responsive, high-performance websites with fluid animations, dynamic content, and integrated savings calculators for modern innovation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

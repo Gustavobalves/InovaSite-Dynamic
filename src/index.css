@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-prime-navy: #0A1628;
+  --color-prime-cobalt: #1546C0;
+  --color-prime-azure: #2563EB;
+  --color-prime-ice: #EFF4FF;
+  --color-prime-surface: #F8FAFC;
+  --color-prime-ink: #0F172A;
+  --color-prime-muted: #475569;
+  --color-prime-border: #E2E8F0;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color: var(--color-prime-ink);
+    background-color: var(--color-prime-surface);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  button:not(:disabled),
+  a[href] {
+    cursor: pointer;
+  }
+}
+
+/* Subtle architectural coordinate grid for light structural bands */
+.bg-architectural-grid {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Subtle architectural blueprint grid for dark navy panels */
+.bg-architectural-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.09) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Custom accessible range sliders for the Savings Calculator */
+input[type="range"].prime-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: #E2E8F0;
+  outline: none;
+}
+
+input[type="range"].prime-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #1546C0;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(10, 22, 40, 0.22);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].prime-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+  background: #2563EB;
+}
+
+input[type="range"].prime-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #1546C0;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(10, 22, 40, 0.22);
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].prime-slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
